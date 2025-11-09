@@ -1,0 +1,48 @@
+/* Learnify — custom styles (v2) */
+
+:root{
+  --primary:#0d6efd;
+  --muted: #6c757d;
+  --card-radius: .6rem;
+}
+
+/* Reset touches */
+body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; }
+
+/* Header / nav tweaks */
+.navbar-brand { font-size: 1.4rem; letter-spacing: .3px; }
+.nav-link { color: rgba(255,255,255,0.92) !important; }
+
+/* Cards & layout */
+.card { border-radius: var(--card-radius); }
+.course-card img { height: 160px; object-fit: cover; border-top-left-radius: var(--card-radius); border-top-right-radius: var(--card-radius); }
+.course-card .card-body { min-height: 140px; }
+
+/* Popular row tuning - make cards smaller and consistent */
+.popular-row .col-md-4 { display:flex; }
+.popular-row .card { width:100%; }
+
+/* Tasks widget */
+.tasks-card { background: linear-gradient(180deg,#fff,#f8fbff); padding: 1rem; border-radius: .6rem; box-shadow: 0 6px 18px rgba(13,110,253,0.06); }
+.tasks-list { list-style: none; padding: 0; margin: 0; }
+.tasks-list li { display:flex; align-items:center; justify-content:space-between; padding: .5rem .4rem; border-radius: .45rem; margin-bottom: .4rem; background: #fff; border:1px solid #f1f3f5; }
+.tasks-list li.done { opacity: .6; text-decoration: line-through; background: #f8f9fa; }
+
+/* Buttons colors */
+.btn-outline-success { border-color: #198754; color:#198754; }
+.btn-outline-success:hover { background:#198754; color:#fff; }
+
+/* Blog */
+.blog-card img { height: 160px; object-fit: cover; border-radius: .4rem; }
+
+/* About story */
+.story-illustration { max-width:100%; border-radius: .5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+
+/* Footer */
+footer { font-size: .9rem; }
+
+/* Responsive small tweaks */
+@media (max-width:576px){
+  .course-card img { height: 140px; }
+  .tasks-card { padding: .7rem; }
+}

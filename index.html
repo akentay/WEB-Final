@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Learnify — Онлайн обучение</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#/">Learnify</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#/">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="#/courses">Курсы</a></li>
+          <li class="nav-item"><a class="nav-link" href="#/blog">Блог</a></li>
+          <li class="nav-item"><a class="nav-link" href="#/about">О нас</a></li>
+          <li class="nav-item"><a class="nav-link" href="#/profile">Профиль</a></li>
+        </ul>
+
+        <div class="d-flex gap-2">
+          <button id="loginBtn" class="btn btn-light btn-sm">Вход</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="container my-4 flex-grow-1" id="app">
+    <!-- Content renders here -->
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-light py-3 mt-auto">
+    <div class="container d-flex justify-content-between align-items-center small">
+      <div>© <span id="year"></span> Learnify - учебный проект</div>
+    </div>
+  </footer>
+
+  <!-- AUTH MODAL -->
+  <div class="modal fade" id="authModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Вход / Регистрация</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="authForm" class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" id="authEmail" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Пароль</label>
+            <input type="password" id="authPass" class="form-control" minlength="6" required>
+          </div>
+          <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="rememberMe">
+            <label class="form-check-label">Запомнить меня</label>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-primary">Войти</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL (симуляция) -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Оформление заказа</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <form id="checkoutForm" class="modal-body">
+          <div class="mb-2">
+            <label class="form-label">Имя</label>
+            <input type="text" id="orderName" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Email</label>
+            <input type="email" id="orderEmail" class="form-control" required>
+          </div>
+          <div class="mb-2">
+            <label class="form-label">Номер карты</label>
+            <input type="text" id="cardNumber" class="form-control" placeholder="4111 1111 1111 1111" required>
+          </div>
+          <div class="row">
+            <div class="col-6 mb-2">
+              <label class="form-label">Срок (MM/YY)</label>
+              <input type="text" id="cardExp" class="form-control" placeholder="12/26" required>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="form-label">CVV</label>
+              <input type="text" id="cardCvv" class="form-control" placeholder="123" required>
+            </div>
+          </div>
+          <div class="text-end">
+            <button class="btn btn-success">Оплатить</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap + App JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
