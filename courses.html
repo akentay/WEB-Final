@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Курсы - Learnify</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Навигация (такая же как в index.html) -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-graduation-cap me-2"></i>Learnify</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="courses.html">Курсы</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Блог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">О нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Контакты</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center">
+                    <button class="theme-toggle me-3" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <div class="dropdown me-3">
+                        <a href="#" class="text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                            <div class="user-avatar">Г</div>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Войти</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Регистрация</a></li>
+                        </ul>
+                    </div>
+                    <a href="cart.html" class="text-white position-relative">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span class="cart-badge" id="cartCount">0</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Контент страницы курсов -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col">
+                    <h1 class="section-title">Все курсы</h1>
+                    <p>Выберите курс, который соответствует вашим интересам и целям</p>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Поиск курсов..." id="courseSearch">
+                        <button class="btn btn-outline-primary" type="button" id="searchButton">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <select class="form-select" id="categoryFilter">
+                        <option value="all">Все категории</option>
+                        <option value="programming">Программирование</option>
+                        <option value="design">Дизайн</option>
+                        <option value="marketing">Маркетинг</option>
+                        <option value="business">Бизнес</option>
+                        <option value="personal">Личностный рост</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row" id="coursesList">
+                <!-- Курсы будут загружены через JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер (такой же как в index.html) -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-graduation-cap me-2"></i>Learnify</h5>
+                    <p>Платформа онлайн-обучения с курсами от ведущих экспертов в различных областях.</p>
+                    <div class="social-icons">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Навигация</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-light">Главная</a></li>
+                        <li><a href="courses.html" class="text-light">Курсы</a></li>
+                        <li><a href="blog.html" class="text-light">Блог</a></li>
+                        <li><a href="about.html" class="text-light">О нас</a></li>
+                        <li><a href="contact.html" class="text-light">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Категории</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light">Программирование</a></li>
+                        <li><a href="#" class="text-light">Дизайн</a></li>
+                        <li><a href="#" class="text-light">Маркетинг</a></li>
+                        <li><a href="#" class="text-light">Бизнес</a></li>
+                        <li><a href="#" class="text-light">Личностный рост</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Контакты</h5>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-map-marker-alt me-2"></i> г. Нур-Султан, Казахстан</li>
+                        <li><i class="fas fa-phone me-2"></i> +7 (777) 123-45-67</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@learnify.kz</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="bg-light">
+            <div class="text-center">
+                <p>&copy; 2023 Learnify. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Модальные окна (такие же как в index.html) -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <!-- Содержимое модального окна входа -->
+    </div>
+
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <!-- Содержимое модального окна регистрации -->
+    </div>
+
+    <div class="modal fade" id="courseModal" tabindex="-1">
+        <!-- Содержимое модального окна курса -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Загрузка всех курсов
+            loadAllCourses();
+        });
+    </script>
+</body>
+</html>

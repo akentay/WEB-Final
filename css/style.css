@@ -1,48 +1,274 @@
-/* Learnify — custom styles (v2) */
-
-:root{
-  --primary:#0d6efd;
-  --muted: #6c757d;
-  --card-radius: .6rem;
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3a0ca3;
+    --accent-color: #4cc9f0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+    --success-color: #4bb543;
 }
 
-/* Reset touches */
-body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #222; }
+[data-theme="dark"] {
+    --primary-color: #3a56e4;
+    --secondary-color: #2e0a8c;
+    --accent-color: #3ab0d3;
+    --light-color: #121212;
+    --dark-color: #f8f9fa;
+    --success-color: #3da336;
+}
 
-/* Header / nav tweaks */
-.navbar-brand { font-size: 1.4rem; letter-spacing: .3px; }
-.nav-link { color: rgba(255,255,255,0.92) !important; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    transition: all 0.3s ease;
+}
 
-/* Cards & layout */
-.card { border-radius: var(--card-radius); }
-.course-card img { height: 160px; object-fit: cover; border-top-left-radius: var(--card-radius); border-top-right-radius: var(--card-radius); }
-.course-card .card-body { min-height: 140px; }
+.navbar {
+    background-color: var(--primary-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
 
-/* Popular row tuning - make cards smaller and consistent */
-.popular-row .col-md-4 { display:flex; }
-.popular-row .card { width:100%; }
+.navbar-brand, .nav-link {
+    color: white !important;
+}
 
-/* Tasks widget */
-.tasks-card { background: linear-gradient(180deg,#fff,#f8fbff); padding: 1rem; border-radius: .6rem; box-shadow: 0 6px 18px rgba(13,110,253,0.06); }
-.tasks-list { list-style: none; padding: 0; margin: 0; }
-.tasks-list li { display:flex; align-items:center; justify-content:space-between; padding: .5rem .4rem; border-radius: .45rem; margin-bottom: .4rem; background: #fff; border:1px solid #f1f3f5; }
-.tasks-list li.done { opacity: .6; text-decoration: line-through; background: #f8f9fa; }
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
 
-/* Buttons colors */
-.btn-outline-success { border-color: #198754; color:#198754; }
-.btn-outline-success:hover { background:#198754; color:#fff; }
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+}
 
-/* Blog */
-.blog-card img { height: 160px; object-fit: cover; border-radius: .4rem; }
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
 
-/* About story */
-.story-illustration { max-width:100%; border-radius: .5rem; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+.card {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+    margin-bottom: 20px;
+}
 
-/* Footer */
-footer { font-size: .9rem; }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-/* Responsive small tweaks */
-@media (max-width:576px){
-  .course-card img { height: 140px; }
-  .tasks-card { padding: .7rem; }
+.course-card {
+    height: 100%;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 100px 0;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    padding: 40px 0;
+    margin-top: 50px;
+}
+
+.progress-container {
+    margin: 20px 0;
+}
+
+.progress-bar {
+    background-color: var(--accent-color);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.course-progress {
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    background-color: #e9ecef;
+}
+
+.course-progress-bar {
+    height: 100%;
+    background-color: var(--success-color);
+}
+
+.course-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.instructor-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-card {
+    border-left: 4px solid var(--accent-color);
+}
+
+.form-control:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 0.2rem rgba(76, 201, 240, 0.25);
+}
+
+.alert-success {
+    background-color: rgba(75, 181, 67, 0.1);
+    border-color: var(--success-color);
+    color: var(--success-color);
+}
+
+.course-modal-image {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.enrolled-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--success-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+}
+
+.favorite-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.favorite-btn.active {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    color: var(--primary-color);
+}
+
+.blog-card {
+    height: 100%;
+}
+
+.blog-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.contact-info {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.cart-item {
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.cart-summary {
+    background-color: var(--light-color);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.about-team {
+    text-align: center;
+}
+
+.team-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+}
+
+.value-card {
+    text-align: center;
+    padding: 30px 20px;
+    border: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-5px);
+}
+
+.value-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
 }
